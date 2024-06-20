@@ -8,6 +8,7 @@ void Reassembler::insert( uint64_t first_index, string data, bool is_last_substr
   auto& write = writer(); 
   if(data.size() == 0){
    if(first_index == next_ && is_last_substring) {
+    last_byte_ = next_;
     write.close();
    }	 
    return;  

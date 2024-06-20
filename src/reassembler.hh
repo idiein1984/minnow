@@ -41,7 +41,9 @@ public:
 
   // Access output stream writer, but const-only (can't write from outside)
   const Writer& writer() const { return output_.writer(); }
-
+  
+  uint64_t get_next() const { return next_; } 
+  void set_error() { output_.set_error();}
 private:
   void add_storage(uint64_t start, uint64_t end, std::string data);
   Writer& writer() {return output_.writer();} 
